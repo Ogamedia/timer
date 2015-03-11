@@ -12,11 +12,16 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0.3.2');
-  api.addFiles('ogamedia:timer.js');
+  api.use('mrt:moment@2.8.1');
+  api.use('templating');
+  api.addFiles('./client/main.html', 'client');
+  api.addFiles('ogamedia:timer.js','client');
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('ogamedia:timer');
+  api.use('mrt:moment@2.8.1');;
+  api.imply('templating');
+  api.use(['ogamedia:timer']);
   api.addFiles('ogamedia:timer-tests.js');
 });

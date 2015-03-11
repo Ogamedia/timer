@@ -1,199 +1,237 @@
 
 // dates
 	// to be used for moments like yesterday at 11:30
-	Template.registerHelper('cal', function (created) {
+		// % tm_cal
+	Template.registerHelper('tm_cal', function (created) {
+		console.log('test');
 		return moment(created).calendar();
 	});
 
 	// to be used for moments like 2 minutes ago
-	Template.registerHelper('now', function (created) {
+		// % tm_now
+	Template.registerHelper('tm_now', function (created) {
 		return moment(created).fromNow();
 	});
 
-	// shorthand for localized date
-		Template.registerHelper('locale', function (created) {
+	// shorthand for localized date like 3/10/2015 9:37 PM
+		// % tm_locale
+		Template.registerHelper('tm_locale', function (created) {
 			return moment(created).format('l LT');
 		});
 
 // year
 	// for four digit year eg. 2014
-	Template.registerHelper('yearNF', function (created) {
+		// % tm_year
+	Template.registerHelper('tm_year', function (created) {
 		return moment(created).format("YYYY");
 	});
 
 
 	// for two digit year eg. 14
-	Template.registerHelper('yearNP', function (created) {
+		// % tm_yr
+	Template.registerHelper('tm_yr', function (created) {
 		return moment(created).format("YY");
 	});
 
 // month
 	// for full month name eg. august
-	Template.registerHelper('mthWF', function (created) {
+		// % tm_month
+	Template.registerHelper('tm_month', function (created) {
 		return moment(created).locale("MMMM");
 	});
 
 	// for partial month name eg. aug
-	Template.registerHelper('mthWP', function (created) {
+		// % tm_mon
+	Template.registerHelper('tm_mon', function (created) {
 		return moment(created).locale("MMM");
 	});
 
 	// for month presentation in numbers. eg. dec equals 12 and 1 equals 01
-	Template.registerHelper('mthN', function (created) {
+		// % tm_mth
+	Template.registerHelper('tm_mth', function (created) {
 		return moment(created).format("MM");
 	});
 
 
 	// for weekly month presentation in numbers. eg. 1, 2, 3, 4
-	Template.registerHelper('mthQ', function (created) {
+		// % tm_week
+	Template.registerHelper('tm_week', function (created) {
 		return moment(created).format("Q");
 	});
 
 // week
 	// for ISO presentation of day with numbers. eg. 1 24, 53
-	Template.registerHelper('wk', function (created) {
+		// % tm_weeks
+	Template.registerHelper('tm_weeks', function (created) {
 		return moment(created).format("WW");
 	});
 
 	// for locale presentation of day with numbers. eg. 1 24, 53
-	Template.registerHelper('wkYl', function (created) {
+		// % tm_weeksl
+	Template.registerHelper('tm_weeksl', function (created) {
 		return moment(created).format("ww");
 	});
 
 	// for ISO 4 digit week year  eg. 2014
-	Template.registerHelper('wkNF', function (created) {
+		// % tm_wkNF
+	Template.registerHelper('tm_wkNF', function (created) {
 		return moment(created).format("GGGG");
 	});
 
 	// for ISO 2 digit week year  eg. 14
-	Template.registerHelper('wkNP', function (created) {
+		// % tm_wkNP
+	Template.registerHelper('tm_wkNP', function (created) {
 		return moment(created).format("GG");
 	});
 
 	// for local 4 digit week year  eg. 2014
-	Template.registerHelper('wkNFl', function (created) {
+		// % tm_wkNFl
+	Template.registerHelper('tm_wkNFl', function (created) {
 		return moment(created).format("gggg");
 	});
 
 	// for local 2 digit week year  eg. 14
-	Template.registerHelper('wkNPl', function (created) {
+		// % tm_wkNPl
+	Template.registerHelper('tm_wkNPl', function (created) {
 		return moment(created).format("gg");
 	});
 
 // day
 	// for presentation of day with numbers. eg. 24, 31, 3
-	Template.registerHelper('dayN', function (created) {
+		// % tm_day
+	Template.registerHelper('tm_day', function (created) {
 		return moment(created).format("DD");
 	});
 
 	// for presentation of day with Numbered Ordinals. eg. 24th, 31st, 3rd
-	Template.registerHelper('dayO', function (created) {
+		// % tm_dayO
+	Template.registerHelper('tm_dayO', function (created) {
 		return moment(created).format("Do");
 	});
 
 	// for presentation of day of the year eg. jan 3rd will be 3, dec 31 will be 365
-	Template.registerHelper('dayY', function (created) {
+		// % tm_days
+	Template.registerHelper('tm_days', function (created) {
 		return moment(created).format("DDDD");
 	});
 
 	// for ISO presentation of day of the week eg. 1, 4, 5
-	Template.registerHelper('dayW', function (created) {
+		// % tm_dayW
+	Template.registerHelper('tm_dayW', function (created) {
 		return moment(created).format("E");
 	});
 
 	// for Locale presentation of day of the week eg. 1 to 7
-	Template.registerHelper('dayWl', function (created) {
+		// % tm_dayWl
+	Template.registerHelper('tm_dayWl', function (created) {
 		return moment(created).format("e");
 	});
 
 // timestamp
 	// for unix timestamps eg.1410715640.579
-	Template.registerHelper('unx', function (created) {
+		// % tm_unx
+	Template.registerHelper('tm_unx', function (created) {
 		return moment(created).format("X");
 	});
 
 	//  for unix timestamps 1410715640579
-	Template.registerHelper('unxms', function (created) {
+		// % tm_unxms
+	Template.registerHelper('tm_unxms', function (created) {
 		return moment(created).format("x");
 	});
 
 //hour
 	// 12 hour 
 		// for presenting hours minutes and seconds in 12 hour format eg. 3:12:36
-		Template.registerHelper('hms', function (created) {
+			// % tm_hms
+		Template.registerHelper('tm_hms', function (created) {
 			return moment(created).format("hh:mm:ss");
 		});
 
 		// for presenting hours minutes and seconds with ante or post meridian (small letters)eg. 3:12:36 pm
-		Template.registerHelper('hmsF', function (created) {
+			// % tm_hmsF
+		Template.registerHelper('tm_hmsF', function (created) {
 			return moment(created).format("hh:mm:ss a");
 		});
 
 		// for presenting hours minutes and seconds with ante or post meridian (caps letters)eg. 3:12:36 PM
-		Template.registerHelper('hmsFC', function (created) {
+			// % tm_hmsFC
+		Template.registerHelper('tm_hmsFC', function (created) {
 			return moment(created).format("hh:mm:ss A");
 		});
 
 		// for presenting hours minutes and seconds with tenth of a second eg. 3:12:36:9
-		Template.registerHelper('hmss', function (created) {
+			// % tm_hmss
+		Template.registerHelper('tm_hmss', function (created) {
 			return moment(created).format("hh:mm:ss:S");
 		});
 
 		// for presenting hours minutes and seconds with hundredth of a second eg. 3:12:36:44
-		Template.registerHelper('hmsss', function (created) {
+			// % tm_hmsss
+		Template.registerHelper('tm_hmsss', function (created) {
 			return moment(created).format("hh:mm:ss:SS");
 		});
 
 		// for presenting hours minutes and seconds with thousandths of a second eg. 3:12:36:4545
-		Template.registerHelper('hmssss', function (created) {
+			// % tm_hmssss
+		Template.registerHelper('tm_hmssss', function (created) {
 			return moment(created).format("hh:mm:ss:SSSS");
 		});
 
 	//24 hour
 		// for presenting hours minutes and seconds in 24 hour format eg. 3:12:36
-		Template.registerHelper('hms', function (created) {
+			// % tm_hms
+		Template.registerHelper('tm_hms', function (created) {
 			return moment(created).format("HH:mm:ss");
 		});
 
 		// for presenting hours minutes and seconds with tenth of a second in 24 hour format eg. 3:12:36:9
-		Template.registerHelper('Hmss', function (created) {
+			// % tm_Hmss
+		Template.registerHelper('tm_Hmss', function (created) {
 			return moment(created).format("HH:mm:ss:S");
 		});
 
 		// for presenting hours minutes and seconds with hundredth of a second in 24 hour format eg. 3:12:36 3:12:36:44
-		Template.registerHelper('Hmsss', function (created) {
+			// % tm_Hmsss
+		Template.registerHelper('tm_Hmsss', function (created) {
 			return moment(created).format("HH:mm:ss:SS");
 		});
 
 		// for presenting hours minutes and seconds with thousandths of a second in 24 hour format eg. 3:12:36 3:12:36:4545
-		Template.registerHelper('Hmssss', function (created) {
+			// % tm_Hmssss
+		Template.registerHelper('tm_Hmssss', function (created) {
 			return moment(created).format("HH:mm:ss:SSS");
 		});
 
 // minutes
 		// for presenting minutes eg. 36
-		Template.registerHelper('min', function (created) {
+			//% tm_min
+		Template.registerHelper('tm_min', function (created) {
 			return moment(created).format("mm");
 		});
 
 // seconds
 		// for presenting secs  eg. secs
-		Template.registerHelper('sec', function (created) {
+			//% tm_sec
+		Template.registerHelper('tm_sec', function (created) {
 			return moment(created).format("ss");
 		});
 
 		// for presenting tenth of a second eg. secs
-		Template.registerHelper('secH', function (created) {
+			//% tm_secs
+		Template.registerHelper('tm_secs', function (created) {
 			return moment(created).format("S");
 		});
 
 		// for presenting hundreth of a second eg. secs
-		Template.registerHelper('secH', function (created) {
+			//% tm_secss
+		Template.registerHelper('tm_secss', function (created) {
 			return moment(created).format("SS");
 		});
 
 
 		// for presenting thousandth of a second eg. secs
-		Template.registerHelper('secH', function (created) {
+			//% tm_secsss
+		Template.registerHelper('tm_secsss', function (created) {
 			return moment(created).format("SSS");
 		});
