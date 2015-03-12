@@ -16,6 +16,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('mrt:moment@2.8.1');;
+  api.use('templating');
   api.use(['ogamedia:timer']);
   api.addFiles('ogamedia:timer-tests.js');
 });
