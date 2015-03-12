@@ -18,7 +18,7 @@ Depending on when the collection document was created
 
 ## Installation ##
 
-```Meteor add ogamedia:Timer```
+```Meteor add ogamedia:timer```
 
 > Note : this will add mrt:moment to your app
 

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ogamedia:timer',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Nicely format date and time in your meteor app',
   git: 'https://github.com/Ogamedia/timer',
   documentation: 'README.md'
@@ -16,7 +16,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('mrt:moment@2.8.1');;
-  api.imply('templating');
   api.use(['ogamedia:timer']);
   api.addFiles('ogamedia:timer-tests.js');
 });
