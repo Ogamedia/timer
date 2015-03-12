@@ -1,2 +1,2 @@
-.versions
-package.js
+*.versions
+*package.js
