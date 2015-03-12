@@ -18,14 +18,14 @@ Depending on when the collection document was created
 
 ## Installation ##
 
-> Meteor add ogamedia:timer
+```Meteor add ogamedia:Timer```
 
-##### Note ##### : this will add mrt:moment to your app
+> Note : this will add mrt:moment to your app
 
 ## Usage ##
 #####_The app is still under development so not all of moment.js functionality has been implemented, contribution to code is very welcome_#####
 
-1. Add a date function to your app either using collection2 schema (i.e. createdAt) style
+* Add a date function to your app either using collection2 schema (i.e. createdAt) style
 
 ```
 	Checks = new Mongo.Collection('check');  
@@ -54,7 +54,7 @@ Depending on when the collection document was created
 **note**:For collectionFS and packages which provide your collection schema with uploadedAt or createdAt by default, there is no need to worry about the first step  
   If you using other date functions, dont worry, you are covered.
 
-2. Call your date function in html template  
+* Call your date function in html template  
   It can be createdAt, uploadedAt, or any other date function.  
 ```
 <template name="hello">
@@ -65,7 +65,7 @@ Depending on when the collection document was created
 
 ```
 
-3. Just insert a timer method and pass your date function as the parameter.  
+* Just insert a timer method and pass your date function as the parameter.  
   So your new code will be  
 ```
 <template name="hello">
@@ -78,7 +78,7 @@ Depending on when the collection document was created
 And that is it; no need to write Template helpers or UI helpers
 
 ## Syntax ##
-### What you will most likely be using ### 
+### What you will most likely be using ###
 
 > to be used for moments like 2 minutes ago  
 		```tm_now```
