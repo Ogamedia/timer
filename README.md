@@ -1,11 +1,14 @@
-##Introduction
+Timer
+======
 
-Timer provides the simplest way to format date and time elements in your meteor app.  
+Timer provides the simplest way to format date and time elements in your meteor app.
+
+## Description ##
 Timer is built upon moments.js and the mrt:moment package. Timer takes away the need to write Template helpers because, it has been done for you
 
 To contribute, fork code and send pull request.
 All you need is a single line of code
-> {{tm_now createdAT}}  
+   ```{{tm_now createdAT}}```  
 This will give the following result
 > 3 hours ago  
 or
@@ -13,14 +16,14 @@ or
 
 Depending on when the collection document was created
 
-##Installation
+## Installation ##
 
 > Meteor add ogamedia:timer
 
-#####Note: this will add mrt:moment to your app
+##### Note ##### : this will add mrt:moment to your app
 
-##Usage
-#####_The app is still under development so not all of moment.js functionality has been implemented, contribution to code is very welcome_
+## Usage ##
+#####_The app is still under development so not all of moment.js functionality has been implemented, contribution to code is very welcome_#####
 
 1. Add a date function to your app either using collection2 schema (i.e. createdAt) style
 
@@ -74,8 +77,8 @@ Depending on when the collection document was created
 ```
 And that is it; no need to write Template helpers or UI helpers
 
-##Syntax
-### What you will most likely be using
+## Syntax ##
+### What you will most likely be using ### 
 
 > to be used for moments like 2 minutes ago  
 		```tm_now```
@@ -85,114 +88,116 @@ And that is it; no need to write Template helpers or UI helpers
 
 
 
-###All Syntax
+### All Syntax ###
 
-####dates
+#### dates ####
 
-	> to be used for moments like yesterday at 11:30  
-		tm_cal
+> to be used for moments like yesterday at 11:30  
+		```tm_cal```
 
-	> to be used for moments like 2 minutes ago  
-		tm_now
+> to be used for moments like 2 minutes ago  
+		```tm_now```
 
-	> shorthand for localized date like 3/10/2015 9:37 PM  
-		tm_locale
-####year
+> shorthand for localized date like 3/10/2015 9:37 PM  
+		```tm_locale```
 
-	> for four digit year eg. 2014  
-		tm_year
+#### year ####
 
-	> for two digit year eg. 14  
-		tm_yr
+> for four digit year eg. 2014  
+		```tm_year```
 
-####month
+> for two digit year eg. 14  
+		```tm_yr```
 
-	> for full month name eg. august  
-		tm_month
+#### month ####
 
-	> for partial month name eg. aug  
-		tm_mon
+> for full month name eg. august  
+		```tm_month```
 
-	> for month presentation in numbers. eg. dec equals 12 and 1 equals 01  
-		tm_mth
+> for partial month name eg. aug  
+		```tm_mon```
 
-	> for weekly month presentation in numbers. eg. 1, 2, 3, 4  
-		tm_week
+> for month presentation in numbers. eg. dec equals 12 and 1 equals 01  		
+		```tm_mth```
 
-####week
+> for weekly month presentation in numbers. eg. 1, 2, 3, 4  
+		```tm_week```
 
-	> for ISO presentation of day with numbers. eg. 1 24, 53  
-		tm_weeks
+#### week ####
 
-	> for locale presentation of day with numbers. eg. 1 24, 53  
-		tm_weeksl
+> for ISO presentation of day with numbers. eg. 1 24, 53  
+		```tm_weeks```
 
-	> for ISO 4 digit week year  eg. 2014  
-		tm_wkNF
+> for locale presentation of day with numbers. eg. 1 24, 53  
+		```tm_weeksl```
 
-	> for ISO 2 digit week year  eg. 14  
-		tm_wkNP
+> for ISO 4 digit week year  eg. 2014  
+		```tm_wkNF```
 
-	> for local 4 digit week year  eg. 2014  
-		tm_wkNFl
+> for ISO 2 digit week year  eg. 14  
+		```tm_wkNP```
 
-	> for local 2 digit week year  eg. 14  
-		tm_wkNPl
+> for local 4 digit week year  eg. 2014  
+		```tm_wkNFl```
 
-	> for unix timestamps eg.1410715640.579  
-		tm_unx
+> for local 2 digit week year  eg. 14  
+		```tm_wkNPl```
 
-	>  for unix timestamps 1410715640579  
-		tm_unxms
+> for unix timestamps eg.1410715640.579  
+		```tm_unx```
 
-#####12 hour 
+>  for unix timestamps 1410715640579  
+		```tm_unxms```
 
-		> for presenting hours minutes and seconds in 12 hour format eg. 3:12:36   
-			tm_hms
+##### 12 hour #####
 
-		> for presenting hours minutes and seconds with ante or post meridian (small letters)eg. 3:12:36 pm   
-			tm_hmsF
+> for presenting hours minutes and seconds in 12 hour format eg. 3:12:36   
+			```tm_hms```
 
-		> for presenting hours minutes and seconds with ante or post meridian (caps letters)eg. 3:12:36 PM   
-			tm_hmsFC
+> for presenting hours minutes and seconds with ante or post meridian (small letters)eg. 3:12:36 pm   
+			```tm_hmsF```
 
-		> for presenting hours minutes and seconds with tenth of a second eg. 3:12:36:9   
-			tm_hmss
+> for presenting hours minutes and seconds with ante or post meridian (caps letters)eg. 3:12:36 PM   
+			```tm_hmsFC```
 
-		> for presenting hours minutes and seconds with hundredth of a second eg. 3:12:36:44   
-			tm_hmsss
+> for presenting hours minutes and seconds with tenth of a second eg. 3:12:36:9   
+			```tm_hmss```
 
-		> for presenting hours minutes and seconds with thousandths of a second eg. 3:12:36:4545   
-			tm_hmssss
+> for presenting hours minutes and seconds with hundredth of a second eg. 3:12:36:44   
+			```tm_hmsss```
 
-#####24 hour
+> for presenting hours minutes and seconds with thousandths of a second eg. 3:12:36:4545   
+			```tm_hmssss```
 
-		> for presenting hours minutes and seconds in 24 hour format eg. 3:12:36  
-			tm_hms
+##### 24 hour #####
 
-		> for presenting hours minutes and seconds with tenth of a second in 24 hour format eg. 3:12:36:9  
-			tm_Hmss
+> for presenting hours minutes and seconds in 24 hour format eg. 3:12:36  
+			```tm_hms```
 
-		> for presenting hours minutes and seconds with hundredth of a second in 24 hour format eg. 3:12:36 3:12:36:44  
-			tm_Hmsss
+> for presenting hours minutes and seconds with tenth of a second in 24 hour format eg. 3:12:36:9  
+			```tm_Hmss```
 
-		> for presenting hours minutes and seconds with thousandths of a second in 24 hour format eg. 3:12:36 3:12:36:4545  
-			tm_Hmssss
+> for presenting hours minutes and seconds with hundredth of a second in 24 hour format eg. 3:12:36 3:12:36:44  
+			```tm_Hmsss```
 
-		> for presenting minutes eg. 36  
-			tm_min
+> for presenting hours minutes and seconds with thousandths of a second in 24 hour format eg. 3:12:36 3:12:36:4545  
+			```tm_Hmssss```
 
-		> for presenting secs  eg. secs  
-			tm_sec
+> for presenting minutes eg. 36  
+			```tm_min```
 
-		> for presenting tenth of a second eg. secs  
-			tm_secs
+> for presenting secs  eg. secs  
+			```tm_sec```
 
-		> for presenting hundreth of a second eg. secs  
-			tm_secss
+> for presenting tenth of a second eg. secs  
+			```tm_secs```
 
-		> for presenting thousandth of a second eg. secs  
-			tm_secsss
+> for presenting hundreth of a second eg. secs  
+			```tm_secss```
 
+> for presenting thousandth of a second eg. secs  
+			```tm_secsss```
 
+## Contribution ##
 
+You can contribute to this code at the [github repo](https://github.com/Ogamedia/timer)
